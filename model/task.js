@@ -74,7 +74,7 @@ module.exports = function(app, callback) {
 				try {
 					id = new ObjectID(id);
 				} catch (error) {
-					console.error('ObjectID generation failed.', error.message);
+					console.error(`task/getById: ObjectID(${id}) generation failed.`, error.message);
 					return null;
 				}
 
@@ -96,7 +96,7 @@ module.exports = function(app, callback) {
 				try {
 					id = new ObjectID(id);
 				} catch (error) {
-					console.error('ObjectID generation failed.', error.message);
+					console.error(`task/editById: ObjectID(${id}) generation failed.`, error.message);
 					return null;
 				}
 				const now = Date.now();
@@ -166,7 +166,7 @@ module.exports = function(app, callback) {
 				try {
 					id = new ObjectID(id);
 				} catch (error) {
-					console.error('ObjectID generation failed.', error.message);
+					console.error(`task/deleteById: ObjectID(${id}) generation failed.`, error.message);
 					return null;
 				}
 				return collection.deleteOne({_id: id})

@@ -98,7 +98,7 @@ module.exports = function(app, callback) {
 				try {
 					id = new ObjectID(id);
 				} catch (error) {
-					console.error('ObjectID generation failed.', error.message);
+					console.error(`result/getById: ObjectID(${id}) generation failed.`, error.message);
 					return null;
 				}
 				return collection.findOne({_id: id})
@@ -125,7 +125,7 @@ module.exports = function(app, callback) {
 				try {
 					id = new ObjectID(id);
 				} catch (error) {
-					console.error('ObjectID generation failed.', error.message);
+					console.error(`result/deleteByTaskId: ObjectID(${id}) generation failed.`, error.message);
 					return null;
 				}
 				return collection.deleteMany({task: id})
@@ -143,7 +143,7 @@ module.exports = function(app, callback) {
 					id = new ObjectID(id);
 					task = new ObjectID(task);
 				} catch (error) {
-					console.error('ObjectID generation failed.', error.message);
+					console.error(`result/getByIdAndTaskId: ObjectID(${id}) generation failed.`, error.message);
 					return null;
 				}
 
